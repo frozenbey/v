@@ -1,0 +1,27 @@
+TXT="HerlockUserBot Otomatik Deploy Kuruluma Hoş Geldiniz"
+TXT+="\nTelegram: @HerlockUserBot"
+pkg update -y
+rm -rf Herlockinstaller
+clear
+echo -e $TXT
+echo "Python Yükleniyor ⌛"
+pkg install python -y
+clear
+echo -e $TXT
+echo "Git Yükleniyor ⌛"
+pkg install git -y
+clear
+echo -e $TXT
+echo "Pyrogram Yükleniyor ⌛"
+pip install pyrogram tgcrypto
+echo "Repo klonlanıyor... ⌛"
+git clone https://github.com/herlockexe/Herlockinstaller
+clear
+echo -e $TXT
+cd Herlockinstaller
+clear
+echo "Gereksinimler Yükleniyor ⌛"
+echo -e $TXT
+pip install -r requirements.txt
+clear
+python -m herlock_installer
